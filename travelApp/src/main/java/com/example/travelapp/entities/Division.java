@@ -33,8 +33,10 @@ public class Division {
     @JoinColumn(name="country_id")
     private Country country;
 
+    /*
     @Column(name="country_id")
     private Long countryID;
+    */
 
     @OneToMany(mappedBy = "division")
     private Set<Customer> customers;

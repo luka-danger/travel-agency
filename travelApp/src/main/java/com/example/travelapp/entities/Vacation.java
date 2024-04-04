@@ -39,9 +39,4 @@ public class Vacation {
     @UpdateTimestamp
     private Date lastUpdate;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "vacation")
-    private Set<Excursion> excursions;
-
-    @OneToMany(mappedBy = "vacation")
-    private Set<CartItem> cartItems;
 }

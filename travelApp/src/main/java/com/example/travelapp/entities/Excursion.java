@@ -36,13 +36,13 @@ public class Excursion {
     @UpdateTimestamp
     private Date lastUpdate;
 
-    @ManyToOne
-    @JoinColumn(name = "vacation_id")
-    private Vacation vacation;
+    @Column(name = "vacation_id")
+    private Long vacation;
 
     @ManyToMany
-    @JoinTable(name="excursion_cartitem",
-            joinColumns = @JoinColumn(name = "cart_item_id"),
-            inverseJoinColumns = @JoinColumn(name="excursion_id"))
+    @JoinTable(name = "excursion_cartitem",
+            joinColumns = @JoinColumn(name = "excursion_id"),
+            inverseJoinColumns = @JoinColumn(name = "cart_item_id"))
     private Set<CartItem> cartItems;
+
 }

@@ -34,13 +34,18 @@ public class CheckoutServiceImplementation implements CheckoutService{
         String orderTrackingNumber = generateOrderTrackingNumber();
         cart.setOrderTrackingNumber(orderTrackingNumber);
 
+        // FIXME: Test that placeOrder() is properly working
+        System.out.println("Tracking: " + orderTrackingNumber);
+
         // populate cart with cartItems
         Set<CartItem> cartItems = purchase.getCartItems();
         cartItems.forEach(item -> cart.add(item));
 
+
         // populate cart with customer and cart items
         cart.setCustomer(purchase.getCustomer());
         cart.setCartItems(purchase.getCartItems());
+
 
         // populate customer with cart
         Customer customer = purchase.getCustomer();

@@ -2,15 +2,21 @@ package com.example.travelapp.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name="divisions")
-@Data
+@NoArgsConstructor
+@Getter
+@Setter
 public class Division {
 
     @Id
@@ -19,7 +25,7 @@ public class Division {
     private Long id;
 
     @Column(name="division")
-    private String divisionName;
+    private String division_name;
 
     @Column(name="create_date")
     @CreationTimestamp
@@ -29,15 +35,17 @@ public class Division {
     @UpdateTimestamp
     private Date lastUpdate;
 
-    @ManyToOne
-    @JoinColumn(name="country_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="country_id", nullable = false, insertable = false, updatable = false)
     private Country country;
 
-    /*
-    @Column(name="country_id")
-    private Long countryID;
-    */
+    @Column(name="Country_ID")
+    private Long country_id;
+    public void setCountry(Country country) {
+        setCountry_id(country.getId());
+        this.country = country;
+    }
 
     @OneToMany(mappedBy = "division")
-    private Set<Customer> customers;
+    private Set<Customer> customers = new HashSet<>();
 }

@@ -3,6 +3,7 @@ package com.example.travelapp.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.hibernate.annotations.CreationTimestamp;
@@ -14,7 +15,7 @@ import java.util.Set;
 
 @Entity
 @Table(name="customers")
-@Data
+@NoArgsConstructor
 @Getter
 @Setter
 public class Customer {
@@ -63,5 +64,13 @@ public class Customer {
             carts.add(cart);
             cart.setCustomer(this);
         }
+    }
+
+    public Customer(String firstName, String lastName, String address, String postal_code, String phone) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.postal_code = postal_code;
+        this.phone = phone;
     }
 }

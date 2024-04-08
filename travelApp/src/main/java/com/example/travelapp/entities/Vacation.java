@@ -2,16 +2,22 @@ package com.example.travelapp.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name="vacations")
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 public class Vacation {
 
     @Id
@@ -38,5 +44,8 @@ public class Vacation {
     @Column(name = "last_update")
     @UpdateTimestamp
     private Date lastUpdate;
+
+    @OneToMany(mappedBy = "vacation")
+    private Set<CartItem> cartItems = new HashSet<>();
 
 }

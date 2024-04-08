@@ -3,6 +3,7 @@ package com.example.travelapp.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -12,7 +13,7 @@ import java.util.Set;
 
 @Entity
 @Table(name="cart_items")
-@Data
+@NoArgsConstructor
 @Getter
 @Setter
 public class CartItem {
@@ -22,8 +23,9 @@ public class CartItem {
     @Column(name="cart_item_id")
     private Long id;
 
-    @Column(name = "vacation_id")
-    private Long vacation;
+    @ManyToOne
+    @JoinColumn(name="vacation_id", nullable=false)
+    private Vacation vacation;
 
     @ManyToMany
     @JoinTable(name = "excursion_cartitem",
@@ -42,18 +44,4 @@ public class CartItem {
     @Column(name="last_update")
     @UpdateTimestamp
     private Date lastUpdate;
-}
-
-
-@Table(name="cart_items")
-public class CartItem {
-
-    @Column(name = "vacation_id")
-    private Long vacation;
-
-    @ManyToMany
-    @JoinTable(name = "excursion_cartitem",
-            joinColumns = @JoinColumn(name = "cart_item_id"),
-            inverseJoinColumns = @JoinColumn(name = "excursion_id"))
-    private Set<Excursion> excursions;
 }

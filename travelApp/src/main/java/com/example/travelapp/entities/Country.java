@@ -2,6 +2,9 @@ package com.example.travelapp.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -10,7 +13,9 @@ import java.util.Set;
 
 @Entity
 @Table(name="countries")
-@Data
+@NoArgsConstructor
+@Getter
+@Setter
 public class Country {
 
     @Id

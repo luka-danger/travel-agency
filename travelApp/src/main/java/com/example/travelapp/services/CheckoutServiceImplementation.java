@@ -41,11 +41,13 @@ public class CheckoutServiceImplementation implements CheckoutService{
         Set<CartItem> cartItems = purchase.getCartItems();
         cartItems.forEach(item -> cart.add(item));
 
-
+        /*
         // populate cart with customer and cart items
         cart.setCustomer(purchase.getCustomer());
         cart.setCartItems(purchase.getCartItems());
 
+
+         */
 
         // populate customer with cart
         Customer customer = purchase.getCustomer();

@@ -6,6 +6,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin
 public interface ExcursionRepository extends JpaRepository<Excursion, Long> {
 }

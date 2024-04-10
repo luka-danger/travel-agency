@@ -98,7 +98,7 @@ VacationRepostiory. All interfaces extend JpaRepository and include cross-origin
 **(G) Write code to include validation to enforce the inputs needed by the Angular front-end** Validation
 to enforce front-end inputs can be found inside the Customer.java class located in the entities package. The 
 code is enforced using nullable = false inside the @Column on variables requiring input. These variables include:
-firstName, lastName, address, postal_code, phone, division, and customer id.
+firstName, lastName, address, postal_code, phone, and customer id.
 
 **(H) Write code for the controllers package that includes a REST controller checkout 
 controller class with a post mapping to place orders** Found in the CheckoutController class inside the 
@@ -122,9 +122,13 @@ in the database.
 
 ![Confirmation](src/main/resources/static/screenshots/confirmation.png)
 
-![Customers](src/main/resources/static/screenshots/customers.png)
+![Excursion Console](src/main/resources/static/screenshots/excursion-console.png)
 
-![Customer Info](src/main/resources/static/screenshots/customer-info.png)
+![Checkout Console](src/main/resources/static/screenshots/checkout-console.png)
+
+![Confirmation Console](src/main/resources/static/screenshots/confirmation-console.png)
+
+![Customers](src/main/resources/static/screenshots/customers.png)
 
 ![Customer MySQL Table](src/main/resources/static/screenshots/customer-table.png)
 

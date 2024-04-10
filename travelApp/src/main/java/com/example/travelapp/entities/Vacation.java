@@ -51,6 +51,6 @@ public class Vacation {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "vacation_id")
-    private Set<Excursion> excursion = new HashSet<>();
+    private Set<Excursion> excursions = new HashSet<>();
 
 }

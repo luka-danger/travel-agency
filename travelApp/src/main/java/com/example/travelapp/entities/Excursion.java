@@ -44,27 +44,6 @@ public class Excursion {
     @JoinColumn(name="vacation_id", nullable = false)
     private Vacation vacation;
 
-    /*
-    @Column(name="vacation_id")
-    private Long vacationId;
-
-
-     */
-    /*
-    public void setVacation(Vacation vacation) {
-        setVacationId(vacation.getId());
-        this.vacation = vacation;
-    }
-
-     */
-
-    /*
-    public Long getVacationId() {
-        return vacation != null ? vacation.getId() : null;
-    }
-
-     */
-
 
     @ManyToMany
     @JoinTable(name = "excursion_cartitem",

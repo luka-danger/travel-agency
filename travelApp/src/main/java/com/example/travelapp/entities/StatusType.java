@@ -1,9 +1,9 @@
 package com.example.travelapp.entities;
 
 public enum StatusType {
-    PENDING("pending"),
-    ORDERED("ordered"),
-    Canceled("canceled");
+    pending("pending"),
+    ordered("ordered"),
+    canceled("canceled");
 
     private final String displayStatus;
 

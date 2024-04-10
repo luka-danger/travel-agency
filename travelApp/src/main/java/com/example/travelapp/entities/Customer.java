@@ -49,7 +49,7 @@ public class Customer {
     private Date lastUpdate;
 
     @ManyToOne
-    @JoinColumn(name="division_id")
+    @JoinColumn(name="division_id", nullable = false)
     private Division division;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")

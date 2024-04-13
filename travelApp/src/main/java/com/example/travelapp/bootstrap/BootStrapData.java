@@ -29,7 +29,7 @@ public class BootStrapData implements CommandLineRunner {
         Customer michael = new Customer("Michael", "Scott", "1725 Slough Avenue", "18505", "(407)555-5555");
         Customer elaine = new Customer ("Elaine", "Benes", "78 West 86th St Apt 33", "10009", "(646)-555-5555");
 
-        if (customerRepository.count() == 0) {
+        if (customerRepository.count() == 1) {
             customerRepository.save(jesse);
             customerRepository.save(walt);
             customerRepository.save(lucille);
